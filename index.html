@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ありがとうレシート プライバシーポリシー・利用規約</title>
+<style>
+  :root {
+    --bg: #F7F5F2;
+    --surface: #FFFFFF;
+    --ink: #212121;
+    --ink-muted: #6E6A66;
+    --ink-faint: #8C8783;
+    --accent: #E86B4A;
+    --accent-strong: #B04A2F;
+    --accent-soft: #FCEDE8;
+    --line: #E2DDD8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #161412;
+      --surface: #221F1C;
+      --ink: #F5F2EF;
+      --ink-muted: #BDB5AE;
+      --ink-faint: #958D86;
+      --accent: #E86B4A;
+      --accent-strong: #F4A48C;
+      --accent-soft: #3A2620;
+      --line: #3A3531;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #161412;
+    --surface: #221F1C;
+    --ink: #F5F2EF;
+    --ink-muted: #BDB5AE;
+    --ink-faint: #958D86;
+    --accent: #E86B4A;
+    --accent-strong: #F4A48C;
+    --accent-soft: #3A2620;
+    --line: #3A3531;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: ui-sans-serif, -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif;
+    line-height: 1.8;
+    margin: 0;
+  }
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 96px;
+  }
+  header.doc-header {
+    margin-bottom: 40px;
+  }
+  .app-name {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--accent-strong);
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px;
+    text-wrap: balance;
+  }
+  nav.toc {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  nav.toc button {
+    font: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent-strong);
+    background: var(--accent-soft);
+    padding: 6px 14px;
+    border: none;
+    border-radius: 999px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  nav.toc button[aria-selected="true"] {
+    color: #fff;
+    background: var(--accent-strong);
+  }
+
+  .tab-panel {
+    display: none;
+  }
+  .tab-panel.is-active {
+    display: block;
+  }
+
+  .back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 999px;
+    background: var(--accent-strong);
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+    z-index: 20;
+  }
+  .back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .back-to-top:hover {
+    background: var(--accent);
+  }
+
+  section.doc {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 36px 40px;
+    margin-bottom: 28px;
+  }
+  section.doc h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+  .doc-meta {
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin: 0 0 28px;
+  }
+  h3 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 28px 0 8px;
+  }
+  h3:first-of-type { margin-top: 0; }
+  p, li {
+    font-size: 15px;
+    color: var(--ink);
+    max-width: 62ch;
+  }
+  p { margin: 0 0 14px; }
+  ul, ol { margin: 0 0 14px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  .muted { color: var(--ink-muted); }
+
+  .placeholder {
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    padding: 1px 6px;
+    border-radius: 5px;
+    font-weight: 600;
+  }
+
+  footer.doc-footer {
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin-top: 24px;
+  }
+
+  @media (max-width: 600px) {
+    .page {
+      padding: 32px 16px 64px;
+    }
+    h1 {
+      font-size: 22px;
+    }
+    section.doc {
+      padding: 24px 20px;
+      border-radius: 12px;
+    }
+  }
+</style>
+
+<div class="page">
+  <header class="doc-header">
+    <p class="app-name">ありがとうレシート</p>
+    <h1>プライバシーポリシー・利用規約</h1>
+    <nav class="toc" role="tablist">
+      <button type="button" role="tab" data-tab="privacy" aria-selected="true">プライバシーポリシー</button>
+      <button type="button" role="tab" data-tab="terms" aria-selected="false">利用規約</button>
+    </nav>
+  </header>
+
+  <section class="doc tab-panel is-active" id="privacy">
+    <h2>プライバシーポリシー</h2>
+    <p class="doc-meta">最終更新日：<span class="placeholder last-updated">2026年10月7日</span></p>
+
+    <p>
+      本アプリの開発者（以下「開発者」といいます。開発者の詳細はApp Store上の本アプリ製品ページをご参照ください）は、iOSアプリ「ありがとうレシート」（以下「本アプリ」といいます）における利用者の情報の取り扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます）を定めます。
+    </p>
+
+    <h3>1. 取り扱う情報</h3>
+    <p>
+      本アプリは、利用者が入力・記録した次の情報を取り扱います。
+    </p>
+    <ul>
+      <li>記録した家事（家事の名前・絵文字・記録した日時）</li>
+      <li>設定した名前（あなたの名前・渡す相手の名前）、締め日、家事ボタンの内容</li>
+      <li>レシートに載せる「ひとこと」</li>
+      <li>記録を区別するために本アプリが端末内で自動的に作成する識別子</li>
+    </ul>
+    <p>
+      これらの情報は<strong>すべて利用者の端末内にのみ保存</strong>され、開発者を含むいかなる第三者のサーバーにも送信されません。本アプリにはアカウント登録の仕組みはありません。
+    </p>
+
+    <h3>2. 写真へのアクセス</h3>
+    <p>
+      共有シートの「画像を保存」でレシート画像を「写真」に保存する場合に限り、写真ライブラリへの追加の許可を求めます。本アプリが写真ライブラリ内の写真を読み取ることはありません。
+    </p>
+
+    <h3>3. レシート画像の共有</h3>
+    <p>
+      レシート画像には、設定した名前・記録した家事・「ひとこと」が含まれます。共有シートからメッセージアプリ等に送信した画像は、利用者が選んだ送信先のサービスで取り扱われ、そのサービスのプライバシーポリシーが適用されます。送信先は利用者ご自身の判断で選択してください。
+    </p>
+
+    <h3>4. 第三者への提供</h3>
+    <p>
+      本アプリは、広告配信・アクセス解析などの第三者サービス（SDK）を組み込んでおらず、利用者の情報を第三者に提供・共有することはありません。
+    </p>
+
+    <h3>5. データの削除</h3>
+    <p>
+      本アプリ内に保存された記録・設定などの情報は、本アプリをアンインストールすることで端末から削除されます。なお、設定画面から家事ボタンを削除しても、過去のレシートを作成するために、その家事の記録は端末内に残ります。
+    </p>
+
+    <h3>6. 本ポリシーの変更</h3>
+    <p>
+      本ポリシーの内容は、法令の変更や本アプリの機能追加等に伴い、予告なく変更されることがあります。変更後のポリシーは本ページに掲載した時点から効力を生じるものとします。
+    </p>
+
+    <h3>7. お問い合わせ</h3>
+    <p>
+      本ポリシーに関するお問い合わせは、App Store上の本アプリ製品ページに記載のサポート情報よりご連絡ください。
+    </p>
+  </section>
+
+  <section class="doc tab-panel" id="terms">
+    <h2>利用規約</h2>
+    <p class="doc-meta">最終更新日：<span class="placeholder last-updated">2026年10月7日</span></p>
+
+    <p>
+      本利用規約（以下「本規約」といいます）は、本アプリの開発者（以下「開発者」といいます。開発者の詳細はApp Store上の本アプリ製品ページをご参照ください）が提供するiOSアプリ「ありがとうレシート」（以下「本アプリ」といいます）の利用条件を定めるものです。利用者は、本アプリをダウンロードまたは使用した時点で、本規約に同意したものとみなされます。
+    </p>
+
+    <h3>1. サービス内容</h3>
+    <p>
+      本アプリは、利用者が行った家事を記録し、1週間分の記録をレシート風の画像にまとめて共有するためのツールです。記録の件数は利用者の記録に基づくものであり、家事の負担や分担の公平さを評価・証明するものではありません。
+    </p>
+
+    <h3>2. 禁止事項</h3>
+    <p>利用者は、本アプリの利用にあたり、以下の行為を行ってはなりません。</p>
+    <ul>
+      <li>本アプリを逆コンパイル、逆アセンブル、リバースエンジニアリングする行為</li>
+      <li>本アプリまたはその複製物を、開発者の許可なく再配布・販売する行為</li>
+      <li>本アプリで作成した画像を用いて、他者を誹謗中傷し、またはその権利を侵害する行為</li>
+      <li>法令または公序良俗に違反する行為</li>
+      <li>その他、開発者が不適切と判断する行為</li>
+    </ul>
+
+    <h3>3. 保証の否認</h3>
+    <p>
+      本アプリは<strong>現状有姿（AS IS）で提供</strong>されます。開発者は、本アプリが特定の目的に適合すること、期待する機能・正確性・完全性を有すること、不具合が生じないこと、継続的に利用可能であることについて、明示・黙示を問わずいかなる保証も行いません。
+    </p>
+
+    <h3>4. 免責事項</h3>
+    <p>
+      開発者は、本アプリの利用または利用不能により利用者に生じたいかなる損害（データの消失、機会損失、その他の直接的・間接的損害を含みますがこれに限りません）についても、<strong>法令上許容される範囲において</strong>一切の責任を負いません。
+    </p>
+    <p>
+      本アプリの記録は利用者の端末内にのみ保存され、開発者はその内容を保管・復元することができません。端末の故障・紛失・機種変更や本アプリのアンインストールにより記録が失われた場合でも、開発者は責任を負いかねます。
+    </p>
+    <p>
+      本アプリで作成した画像の送信先や、その画像をきっかけとした利用者間のやり取りについて、開発者は関与せず、責任を負いません。
+    </p>
+    <p class="muted">
+      ※法令により免責が制限される場合、当該法令の定める範囲に本規約は従うものとします。
+    </p>
+
+    <h3>5. 対象年齢</h3>
+    <p>
+      未成年の方が本アプリを利用する場合は、保護者の同意を得たうえでご利用ください。
+    </p>
+
+    <h3>6. サービスの変更・中断・終了</h3>
+    <p>
+      開発者は、利用者への事前の通知なく、本アプリの内容を変更し、または提供を中断・終了することができるものとします。これにより利用者に生じた損害について、開発者は責任を負いません。
+    </p>
+
+    <h3>7. 規約の変更</h3>
+    <p>
+      開発者は、必要と判断した場合には、利用者への通知なく本規約を変更できるものとします。変更後の規約は本ページに掲載した時点から効力を生じます。
+    </p>
+
+    <h3>8. 準拠法</h3>
+    <p>
+      本規約の解釈にあたっては、日本法を準拠法とします。
+    </p>
+
+    <h3>9. お問い合わせ</h3>
+    <p>
+      本規約に関するお問い合わせは、App Store上の本アプリ製品ページに記載のサポート情報よりご連絡ください。
+    </p>
+  </section>
+
+  <footer class="doc-footer">
+    ありがとうレシート &middot; 最終更新日 <span class="placeholder last-updated">2026年10月7日</span>
+  </footer>
+</div>
+
+<button type="button" class="back-to-top" id="backToTop" aria-label="ページの先頭に戻る">&#8593;</button>
+
+<script>
+  fetch('https://api.github.com/repos/mzkeyy/ThanksReceipt-legal/commits?path=index.html&per_page=1')
+    .then(function (res) { return res.ok ? res.json() : Promise.reject(res.status); })
+    .then(function (commits) {
+      if (!Array.isArray(commits) || !commits[0]) return;
+      var date = new Date(commits[0].commit.committer.date);
+      var formatted = date.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
+      document.querySelectorAll('.last-updated').forEach(function (el) {
+        el.textContent = formatted;
+      });
+    })
+    .catch(function () {
+      // API取得に失敗した場合は、埋め込み済みの静的な日付をそのまま表示する。
+    });
+
+  (function () {
+    var tabButtons = document.querySelectorAll('nav.toc button[data-tab]');
+    var panels = {
+      privacy: document.getElementById('privacy'),
+      terms: document.getElementById('terms')
+    };
+
+    function activateTab(name, updateHash) {
+      if (!panels[name]) return;
+      tabButtons.forEach(function (btn) {
+        btn.setAttribute('aria-selected', String(btn.dataset.tab === name));
+      });
+      Object.keys(panels).forEach(function (key) {
+        panels[key].classList.toggle('is-active', key === name);
+      });
+      if (updateHash) {
+        history.replaceState(null, '', '#' + name);
+      }
+      window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    }
+
+    tabButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        activateTab(btn.dataset.tab, true);
+      });
+    });
+
+    var initial = location.hash.replace('#', '');
+    if (panels[initial]) {
+      activateTab(initial, false);
+    }
+  })();
+
+  (function () {
+    var button = document.getElementById('backToTop');
+    var threshold = 400;
+
+    function updateVisibility() {
+      button.classList.toggle('is-visible', window.scrollY > threshold);
+    }
+
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+    updateVisibility();
+
+    button.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+</script>
